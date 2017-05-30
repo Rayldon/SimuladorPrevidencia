@@ -1,0 +1,51 @@
+<meta meta charset=utf-8>
+<link rel="stylesheet" type="text/css" href="app/previdencia/style.css" />
+
+<div ng-controller="PrevidenciaController" align="center" width=100%>
+	<h3>Previdência Privada</h3>
+	<table border="1">
+		<tr>
+			<td>Salário Inicial:</td>
+			<td>
+				<input type="text" value="R$5.000,00" disabled />
+			</td>
+		</tr>
+		<tr>
+			<td>Informe o Percentual da Contribuição X(1% a 4%):</td>
+			<td>
+				<!-- Diretiva criada para que o campo receba somente números -->
+				<input numeroreal type="text" ng-model="contribuicaox" maxlength="4" ng-blur="validarContribuicaoX();" />
+			</td>
+		</tr>
+		<tr>
+			<td>Informe o Percentual da Contribuição Y(0% a 8%):</td>
+			<td>
+				<input numeroreal type="text" ng-model="contribuicaoy" maxlength="4" ng-blur="validarContribuicaoY();" />
+			</td>
+		</tr>
+		<tr>
+			<td>Informe o tempo de contribuição em anos:</td>
+			<td>
+				<input numerodecimal type="text" ng-model="tempo" maxlength="2" ng-blur="validarTempo();" />
+			</td>
+		</tr>
+	</table>
+	<br />
+	<button ng-click="calcularPrevidencia();">Calcular</button>
+	
+	<br /><br />
+	<table border="1" ng-if="dados!=''" class="table-striped">
+		<tr>
+			<th width="25%">Mês/Ano</th>
+			<th width="25%">Salário</th>
+			<th width="25%">Valor Arrecadado X</th>
+			<th width="25%">Valor Arrecadado Y</th>
+		</tr>
+		<tr ng-repeat="dado in dados">
+			<td>{{dado.mes}}/{{dado.ano}}</td>
+			<td>{{dado.salario}}</td>
+			<td>{{dado.valorArrecadadoX}}</td>
+			<td>{{dado.valorArrecadadoY}}</td>
+		</tr>
+	</table>
+</div>

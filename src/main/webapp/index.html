@@ -1,0 +1,27 @@
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/app.css" />
+
+<script data-main="app/js/main.js" src="angularjs/require.js"></script>
+<meta charset="ISO-8859-1">
+<title>Previdência Privada</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#/previdencia"><i class="fa fa-shield"></i> Previdência</a></li>
+			</ul>
+		</div>
+	</nav>
+	Esse sistema foi baseado em um simulador bem simples encontrado <a href="https://www.konkero.com.br/simulador_previdencia.php" target="_blank">aqui</a>
+
+	<div id="main">
+	 	<div ng-view></div>
+  	</div>
+</body>
+</html>

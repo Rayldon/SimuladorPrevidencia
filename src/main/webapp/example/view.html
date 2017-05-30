@@ -1,0 +1,7 @@
+<h1><a href="#/">Home</a></h1>
+<input type="text" ng-model="msg" />
+<div id="inputElem">{{fromUnit}} <input class="item item-input" type="number" placeholder="0" step="0.01" ng-model="data" ng-change="getValue(data)"></div>
+
+<div id ="rowvalue" class="row" ng-repeat="(key,value) in result">
+	<div id="colvalue" class="col-sm-6">{{key}} : {{value}}</div>
+</div>
